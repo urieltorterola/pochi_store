@@ -3,22 +3,22 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mangas | POCHI STORE</title>
-    <link rel="stylesheet" href="../css/style.css">
+    <title>Inicio | POCHI STORE</title>
+    <link rel="stylesheet" href="src/css/style.css">
 </head>
-<body id="mangas-page">
+<body id="home-page">
     
     <header class="header">
-        <h1><a href="../../index.html">POCHI STORE</a></h1>
+        <h1><a href="index.html">POCHI STORE</a></h1>
         <nav class="nav-links">
-            <a href="mangas.html">MANGAS</a>
-            <a href="ofertas.html">OFERTAS</a>
-            <a href="favoritos.html">FAVORITOS</a>
+            <a href="src/pages/mangas.html">MANGAS</a>
+            <a href="src/pages/ofertas.html">OFERTAS</a>
+            <a href="src/pages/favoritos.html">FAVORITOS</a>
         </nav>
         <div class="search-cart">
             <form class="search-form" id="search-form">
                 <input type="text" id="search-input" placeholder="Buscar por título, autor o etiqueta...">
-                <button type="submit" id="search-button" disabled>⊕</button>
+                <button type="submit" id="search-button">⊕</button>
             </form>
             <div class="cart-container">
                 <span class="cart-icon" id="cart-icon"><span id="cart-count">0</span></span>
@@ -33,26 +33,21 @@
     </header>
 
     <main>
-        <h2>📖 Todos los Mangas</h2>
+        <section class="hero">
+            <h2>¡Bienvenido a Pochi Store! Tu universo de Manga en un solo lugar.</h2>
+            <p>Descubre las últimas novedades y encuentra tus títulos favoritos.</p>
+            <div class="hero-actions">
+                <a href="mangas.html">Ver Todos los Mangas</a>
+                <a href="ofertas.html">Explorar Ofertas Especiales</a>
+            </div>
+        </section>
 
-        <div class="filter-controls">
-            <label for="price-filter">Precio:</label>
-            <select id="price-filter">
-                <option value="all">Sin ordenar</option>
-                <option value="low-to-high">Más Bajo</option>
-                <option value="high-to-low">Más Alto</option>
-            </select>
-            
-            <label for="category-filter">Categoría:</label>
-            <select id="category-filter">
-                <option value="all">Todas</option>
-                </select>
-        </div>
-
-        <section id="manga-grid" class="manga-grid">
-            </section>
+        <section class="featured-products">
+            <h2>📚 Destacados de la Semana</h2>
+            <p>Aquí podríamos mostrar una selección de mangas destacados.</p>
+        </section>
     </main>
-
+    
     <footer class="footer">
         <div class="footer-content">
             <h3>POCHI STORE</h3>
@@ -65,6 +60,7 @@
             <p>&copy; 2025 Pochi Store. Todos los derechos reservados.</p>
         </div>
     </footer>
-    <script src="../js/script.js"></script>
+    <script src="src/js/script.js"></script>
+
 </body>
 </html>
