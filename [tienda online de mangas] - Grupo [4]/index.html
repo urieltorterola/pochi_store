@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inicio | POCHI STORE</title>
+    <link rel="stylesheet" href="src/css/style.css">
+</head>
+<body id="home-page">
+    
+    <header class="header">
+        <h1><a href="index.html">POCHI STORE</a></h1>
+        <nav class="nav-links">
+            <a href="src/pages/mangas.html">MANGAS</a>
+            <a href="src/pages/ofertas.html">OFERTAS</a>
+            <a href="src/pages/favoritos.html">FAVORITOS</a>
+        </nav>
+        <div class="search-cart">
+            <form class="search-form" id="search-form">
+                <input type="text" id="search-input" placeholder="Buscar por título, autor o etiqueta...">
+                <button type="submit" id="search-button">⊕</button>
+            </form>
+            <div class="cart-container">
+                <span class="cart-icon" id="cart-icon"><span id="cart-count">0</span></span>
+                <div class="cart-dropdown" id="cart-dropdown">
+                    <h2>Carrito de Compras</h2>
+                    <ul id="cart-list">
+                        </ul>
+                    <button onclick="alert('Funcionalidad de Checkout no implementada.')" style="padding: 10px; background-color: #00897b; color: white; border: none; width: 100%; cursor: pointer;">Finalizar Compra</button>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <section class="hero">
+            <h2>¡Bienvenido a Pochi Store! Tu universo de Manga en un solo lugar.</h2>
+            <p>Descubre las últimas novedades y encuentra tus títulos favoritos.</p>
+            <div class="hero-actions">
+                <a href="mangas.html">Ver Todos los Mangas</a>
+                <a href="ofertas.html">Explorar Ofertas Especiales</a>
+            </div>
+        </section>
+
+        <section class="featured-products">
+            <h2>📚 Destacados de la Semana</h2>
+            <p>Aquí podríamos mostrar una selección de mangas destacados.</p>
+        </section>
+    </main>
+    
+    <footer class="footer">
+        <div class="footer-content">
+            <h3>POCHI STORE</h3>
+            <p>Somos tu tienda de mangas favorita. Nuestro objetivo es acercar las mejores historias japonesas a manos de nuestros lectores con la mejor calidad y precio.</p>
+            <div class="social-icons">
+                <a href="#" aria-label="Facebook">📘</a>
+                <a href="#" aria-label="Instagram">📸</a>
+                <a href="#" aria-label="Twitter/X">🐦</a>
+            </div>
+            <p>&copy; 2025 Pochi Store. Todos los derechos reservados.</p>
+        </div>
+    </footer>
+    <script src="src/js/script.js"></script>
+
+</body>
+</html>
