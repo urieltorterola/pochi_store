@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Favoritos | POCHI STORE</title>
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+<body id="favorites-page">
+    
+    <header class="header">
+        <h1><a href="../../index.html">POCHI STORE</a></h1>
+        <nav class="nav-links">
+            <a href="mangas.html">MANGAS</a>
+            <a href="ofertas.html">OFERTAS</a>
+            <a href="favoritos.html">FAVORITOS</a>
+        </nav>
+        <div class="search-cart">
+            <form class="search-form" id="search-form">
+                <input type="text" id="search-input" placeholder="Buscar por título, autor o etiqueta...">
+                <button type="submit" id="search-button" disabled>⊕</button>
+            </form>
+            <div class="cart-container">
+                <span class="cart-icon" id="cart-icon"><span id="cart-count">0</span></span>
+                <div class="cart-dropdown" id="cart-dropdown">
+                    <h2>Carrito de Compras</h2>
+                    <ul id="cart-list">
+                        </ul>
+                    <button onclick="alert('Funcionalidad de Checkout no implementada.')" style="padding: 10px; background-color: #00897b; color: white; border: none; width: 100%; cursor: pointer;">Finalizar Compra</button>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <h2>❀ Mis Mangas Favoritos</h2>
+        <p>Estos son los títulos que has guardado.</p>
+
+        <section id="favorites-container" class="manga-grid">
+            </section>
+    </main>
+
+    <footer class="footer">
+        <div class="footer-content">
+            <h3>POCHI STORE</h3>
+            <p>Somos tu tienda de mangas favorita. Nuestro objetivo es acercar las mejores historias japonesas a manos de nuestros lectores con la mejor calidad y precio.</p>
+            <div class="social-icons">
+                <a href="#" aria-label="Facebook">📘</a>
+                <a href="#" aria-label="Instagram">📸</a>
+                <a href="#" aria-label="Twitter/X">🐦</a>
+            </div>
+            <p>&copy; 2025 Pochi Store. Todos los derechos reservados.</p>
+        </div>
+    </footer>
+    <script src="../js/script.js"></script>
+</body>
+</html>
