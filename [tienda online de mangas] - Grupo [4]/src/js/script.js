@@ -59,7 +59,8 @@ function updateCartDisplay() {
             const finalPrice = item.offer ? (item.price * (1 - item.discount)).toFixed(2) : item.price.toFixed(2);
             li.innerHTML = `
                 <span>${item.title} (x${item.quantity}) - $${finalPrice}</span>
-                <button onclick="removeFromCart(${item.id})">Quitar</button>
+                <br>
+                <button class="boton" onclick="removeFromCart(${item.id})">Quitar</button>
             `;
             cartList.appendChild(li);
             totalItems += item.quantity;
