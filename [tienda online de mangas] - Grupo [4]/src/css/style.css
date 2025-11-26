@@ -1,0 +1,871 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: sans-serif;
+}
+
+html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: #50505c;
+    color: #ffffff;
+    padding-top: 80px; 
+    display: flex;
+    flex-direction: column;
+}
+
+.header {
+    background-color: #ff9900;
+    color: white;
+    padding: 10px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.header h1 a {
+    color: white;
+    text-decoration: none;
+    font-size: 1.8rem;
+}
+
+.nav-links a {
+    color: white;
+    text-decoration: none;
+    margin-left: 20px;
+    font-weight: bold;
+    transition: color 0.3s;
+}
+
+.nav-links a:hover {
+    color: #ffd700;
+}
+
+.search-cart {
+    display: flex;
+    align-items: center;
+}
+
+.search-cart form {
+    display: flex;
+    margin-right: 20px;
+}
+
+.search-cart input[type="text"] {
+    padding: 8px;
+    border: none;
+    border-radius: 4px 0 0 4px;
+    width: 200px;
+}
+
+.search-cart button {
+    padding: 8px 12px;
+    border: none;
+    background-color: #00897b;
+    color: rgb(255, 255, 255);
+    border-radius: 0 4px 4px 0;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.search-cart button:hover {
+    background-color: #00695c;
+}
+
+.cart-container {
+    position: relative;
+}
+
+.cart-icon {
+    font-size: 1.2rem;
+    cursor: pointer;
+    position: relative;
+    padding: 15px; 
+    display: flex; 
+    justify-content: center;
+    align-items: center;
+    width: 60px;
+    height: 60px; 
+    border-radius: 50%;
+    color: white;
+    transition: transform 0.2s ease;
+    z-index: 1001;
+    background-image: url('../img-icons/cute-chainsaw-man-denji-pochita-pack.png'); 
+    background-size: cover; 
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.cart-icon:hover {
+    transform: scale(1.05); 
+}
+
+#cart-count {
+    position: absolute; 
+    top: -5px; 
+    right: -5px; 
+    background-color: red;
+    color: white; 
+    border-radius: 50%;
+    padding: 2px 6px;
+    font-size: 0.7rem; 
+    font-weight: bold;
+    z-index: 1002;
+    border: 1px solid white;
+}
+
+.cart-dropdown {
+    position: absolute;
+    top: 60px;
+    right: 0;
+    background-color: #fff;
+    color:  #333; 
+    border: 1px solid #ccc;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 400px;
+    max-height: 600px;
+    overflow-y: auto;
+    display: none;
+    flex-direction: column;
+    padding: 10px;
+    z-index: 999;
+}
+
+.cart-dropdown.active {
+    display: flex;
+}
+
+.cart-dropdown h2 {
+    color: #333;
+}
+
+main {
+    flex-grow: 1;
+    padding: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+    width: 100%;
+}
+
+.banner-principal {
+    width: calc(100% + 40px);
+    margin-left: -20px; 
+    margin-right: -20px;
+    margin-top: -20px;
+    height: 450px; 
+    background-color: transparent; 
+    background-image: none; 
+    border-radius: 10px; 
+    margin-bottom: 30px; 
+    box-shadow: none; 
+    border: none; 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0; 
+    overflow: hidden; 
+}
+
+.banner-principal img {
+    width: 100%; 
+    height: 100%; 
+    object-fit: cover;
+    display: block; 
+    border-radius: 10px; 
+}
+
+.hero {
+    text-align: center;
+    padding: 50px 20px;
+    background-color: #e0f7fa;
+    margin-bottom: 30px;
+    border-radius: 8px;
+}
+
+.hero h2 {
+    color: #00bcd4;
+    margin-bottom: 20px;
+}
+
+.hero-actions a {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #ff9800;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    margin: 10px;
+    font-weight: bold;
+    transition: background-color 0.3s;
+}
+
+.hero-actions a:hover {
+    background-color: #f57c00;
+}
+
+
+.manga-grid {
+    
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); 
+    gap: 40px; 
+    padding: 30px 0;
+    display: grid; 
+}
+
+
+.manga-card {
+    background-color: rgb(41, 32, 32);
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+    transition: transform 0.3s, box-shadow 0.3s;
+    position: relative; 
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    padding: 0;
+}
+
+.manga-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
+}
+.boton{
+    margin-bottom: 10px;
+}
+
+.manga-header-section {
+    position: relative;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 15px;
+    overflow: hidden;
+    cursor: pointer;
+}
+
+.manga-header-section img {
+    width: 100%;
+    height: auto;
+    max-height: 250px;
+    object-fit: contain;
+    border-radius: 4px;
+    margin-bottom: 10px;
+    transition: opacity 0.3s ease;
+}
+
+.manga-header-section h3 {
+    font-size: 1.2rem;
+    margin: 10px 0 5px;
+    text-align: center;
+    color: #ffffff;
+    transition: color 0.3s ease;
+    z-index: 2;
+}
+
+.manga-header-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0); 
+    transition: background-color 0.3s ease;
+    z-index: 1; 
+}
+
+.manga-header-section:hover::before {
+    background-color: rgba(0, 0, 0, 0.6);
+}
+
+.manga-info-display {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.85); 
+    color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    pointer-events: none;
+    text-align: center;
+    transform: scale(1.05); 
+    z-index: 10; 
+}
+
+.manga-header-section:hover .manga-info-display {
+    opacity: 1; 
+    transform: scale(1);
+}
+
+.discount-tag {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background-color: #d32f2f;
+    color: white;
+    padding: 5px 8px;
+    border-radius: 4px;
+    font-size: 0.8rem;
+    font-weight: bold;
+    z-index: 11;
+}
+
+.manga-actions-section {
+    padding: 15px; 
+    border-top: 1px solid #eee;
+    background-color: rgb(41, 32, 32);
+    text-align: center;
+    position: relative;
+    z-index: 20;
+}
+
+.price-old {
+    text-decoration: line-through;
+    color: #999;
+    font-size: 0.9rem;
+    margin-bottom: 0;
+}
+
+.price-new {
+    color: #d32f2f; 
+    font-size: 1.2rem;
+    font-weight: bold;
+}
+
+.buy-btn, .favorite-btn {
+    width: 100%;
+    padding: 10px;
+    margin-top: 5px;
+    border: none;
+    border-radius: 4px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.buy-btn {
+    background-color: #4caf50;
+    color: white;
+}
+
+.buy-btn:hover {
+    background-color: #388e3c;
+}
+
+.favorite-btn {
+    background-color: #f0f0f0;
+    color: #333;
+}
+
+.favorite-btn.is-favorite {
+    background-color: #ffeb3b;
+    color: #333;
+}
+
+.favorite-btn:hover {
+    background-color: #e0e0e0;
+}
+
+.filter-controls {
+    display: flex;
+    justify-content: flex-start;
+    gap: 20px;
+    margin-bottom: 20px;
+    padding: 10px;
+    background-color: #333;
+    border-radius: 8px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.filter-controls label {
+    font-weight: bold;
+    margin-right: 5px;
+}
+
+.filter-controls select {
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+
+.footer {
+    background-color: #000;
+    color: white;
+    padding: 20px;
+    text-align: center;
+    margin-top: auto;
+}
+
+.footer-content {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.footer h3 {
+    margin-bottom: 10px;
+}
+
+.social-icons a {
+    color: white;
+    font-size: 1.5rem;
+    margin: 0 10px;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.social-icons a:hover {
+    color: #00bcd4;
+}
+
+
+@media (max-width: 768px) {
+    .header {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .header h1 {
+        margin-bottom: 10px;
+    }
+
+    .nav-links {
+        display: flex;
+        flex-direction: row; 
+        flex-wrap: wrap;     
+        justify-content: center; 
+        width: 100%;
+        margin-bottom: 10px;
+        align-items: flex-start;
+    }
+    
+    .nav-links a {
+        display: block; 
+        color: white;
+        text-decoration: none;
+        font-weight: bold;
+        transition: color 0.3s;
+        margin: 5px 5px; 
+        width: calc(33.33% - 10px); 
+        text-align: center; 
+        padding: 8px 0;
+        border: 1px solid white;
+        border-radius: 5px;
+        line-height: 1.2;
+    }
+
+    .nav-links a:hover {
+        color: #ffd700;
+    }
+    
+    .nav-links span {
+        display: block; 
+        width: 100%;
+        text-align: center;
+        margin-top: 5px; 
+        margin-bottom: 5px;
+    }
+
+    .search-cart {
+        width: 100%;
+        justify-content: space-between;
+    }
+
+    .search-cart form {
+        flex-grow: 1;
+        margin-right: 10px;
+    }
+
+    .search-cart input[type="text"] {
+        width: 100%;
+    }
+
+    body {
+        padding-top: 180px; 
+    }
+
+    .filter-controls {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .cart-dropdown {
+        width: 250px;
+    }
+    
+    .banner-principal {
+        height: 250px; 
+        width: calc(100% + 40px); 
+        margin-left: -20px; 
+        margin-right: -20px;
+        margin-top: -20px; 
+    }
+    .banner-principal img {
+        border-radius: 8px;
+    }
+}
+
+
+#featured-mangas {
+    padding: 30px; 
+    margin-bottom: 30px;
+    background-color: rgb(41, 32, 32); 
+    color: white; 
+    border-radius: 8px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.5); 
+    margin-top: 20px;
+}
+
+
+#featured-mangas h2 {
+    text-align: center;
+    color: #ff9900; 
+    font-size: 2.2em;
+    margin-bottom: 30px;
+    border-bottom: 3px solid #666; 
+    padding-bottom: 15px;
+    text-transform: uppercase;
+}
+
+
+.carousel-container {
+    position: relative;
+    overflow: hidden; 
+    border-radius: 10px;
+    background-color: rgba(0, 0, 0, 0.2); 
+    padding: 20px; 
+    box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.5); 
+}
+
+.carousel-inner {
+    display: flex;
+    height: 350px;
+}
+
+
+.carousel-item {
+    min-width: 100%;
+    display: none;
+    justify-content: center;
+    align-items: center;
+    padding: 30px 15px; 
+    box-sizing: border-box;
+}
+
+.carousel-item.active {
+    display: flex; 
+}
+
+
+.manga-card-small {
+    display: flex;
+    gap: 20px;
+    width: 95%;
+    max-width: 650px; 
+    background-color: rgb(41, 32, 32); 
+    padding: 25px; 
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5); 
+    align-items: center;
+}
+
+.manga-card-small img {
+    width: 160px; 
+    height: auto;
+    object-fit: cover;
+    border-radius: 4px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5); 
+    flex-shrink: 0;
+}
+
+.card-info {
+    flex-grow: 1;
+}
+
+
+.card-info h4 {
+    margin: 0 0 5px 0;
+    font-size: 1.6em; 
+    color: #ffffff; 
+}
+
+
+.card-info .author {
+    color: #ccc; 
+    margin-bottom: 10px;
+}
+
+.card-info .price-container {
+    font-size: 1.2em;
+    font-weight: bold;
+    color: #00897b;
+    margin: 15px 0;
+}
+
+.card-info .old-price {
+    text-decoration: line-through;
+    color: #aaa;
+    font-weight: normal;
+    margin-right: 8px;
+    font-size: 0.8em;
+}
+
+.card-info .add-to-cart-btn {
+    background-color: #ff5722;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+}
+
+.card-info .add-to-cart-btn:hover {
+    background-color: #e64a19;
+}
+
+
+.carousel-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(255, 153, 0, 0.85); 
+    color: white;
+    padding: 15px 18px; 
+    border: 2px solid white; 
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3); 
+    cursor: pointer;
+    z-index: 10;
+    border-radius: 50%; 
+    font-size: 1.2em; 
+    font-weight: bold;
+    transition: all 0.3s ease;
+    line-height: 1;
+}
+
+.carousel-btn:hover {
+    background: #ff9900; 
+    transform: translateY(-50%) scale(1.05); 
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.4);
+}
+
+.carousel-btn.prev {
+    left: 10px;
+}
+
+.carousel-btn.next {
+    right: 10px;
+}
+
+.btn-ver-mas {
+    display: inline-block;
+    background-color: #00897b; 
+    color: white !important;
+    text-decoration: none;
+    border: none;
+    padding: 10px 20px; 
+    border-radius: 8px; 
+    cursor: pointer;
+    font-weight: bold;
+    transition: background-color 0.3s ease, box-shadow 0.3s;
+    margin-top: 15px;
+    text-align: center;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); 
+}
+
+.btn-ver-mas:hover {
+    background-color: #00695c;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+@media (max-width: 768px) {
+    .manga-card-small {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        max-width: 350px;
+    }
+
+    .manga-card-small img {
+        width: 100px;
+        margin-bottom: 10px;
+    }
+    
+    .carousel-inner {
+        height: 430px;
+    }
+
+    .carousel-btn {
+        padding: 10px 14px; 
+        font-size: 1em; 
+    }
+}
+
+
+
+
+.signupFrm {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: calc(100vh - 160px); 
+    padding: 20px;
+}
+
+
+.registro-form { 
+    background-color: #2a2a2a; 
+    padding: 40px 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.7);
+    width: 100%;
+    max-width: 400px; 
+    display: flex;
+    flex-direction: column; 
+    gap: 15px; 
+}
+
+
+.registro-form h1 {
+    color: #ff9900; 
+    text-align: center;
+    margin-bottom: 25px;
+    font-size: 1.8rem;
+    border-bottom: 2px solid #50505c; 
+    padding-bottom: 10px;
+}
+
+
+.registro-label {
+    color: #f0f0f0; 
+    font-weight: bold;
+    font-size: 0.95rem;
+    margin-bottom: -5px; 
+}
+
+
+.registro-input {
+    padding: 12px;
+    border: 1px solid #444; 
+    border-radius: 5px;
+    background-color: #383838; 
+    color: #ffffff;
+    font-size: 1rem;
+    transition: border-color 0.3s, box-shadow 0.3s;
+}
+
+.registro-input:focus {
+    border-color: #ff9900; 
+    outline: none;
+    box-shadow: 0 0 8px rgba(255, 153, 0, 0.6);
+}
+
+
+.registro-boton {
+    background-color: #ff9900; 
+    color: #2a2a2a; 
+    padding: 12px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1.1rem;
+    font-weight: bold;
+    margin-top: 20px;
+    transition: background-color 0.3s, transform 0.1s;
+}
+
+.registro-boton:hover {
+    background-color: #e68a00; 
+    transform: translateY(-1px);
+}
+
+
+.signupFrm p {
+    text-align: center;
+    margin-top: 15px;
+    color: #ccc;
+}
+
+.signupFrm a {
+    color: #ff9900;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+@media (max-width: 480px) {
+    .registro-form, .form-vertical {
+        margin: 20px;
+        padding: 25px;
+    }
+    .registro-input {
+        padding: 10px;
+    }
+}
+
+@media (max-width: 420px) {
+    body {
+        padding-top: 110px; 
+    }
+
+    .header {
+        padding: 10px;
+    }
+    
+    .header h1 a {
+        font-size: 1.6rem;
+    }
+
+    .cart-dropdown {
+        width: 220px;
+        padding: 8px;
+    }
+
+    .search-cart form {
+        flex-grow: 1; 
+        margin-right: 5px;
+    }
+
+    .search-cart input[type="text"] {
+        padding: 6px;
+    }
+
+    .search-cart button {
+        padding: 6px 10px;
+    }
+
+    .registro-form {
+        padding: 20px;
+        max-width: 95%; 
+    }
+
+    .carousel-item {
+        padding: 15px 5px;
+    }
+
+    .manga-card-small {
+        padding: 15px;
+        width: 100%;
+        max-width: 100%; 
+    }
+}
